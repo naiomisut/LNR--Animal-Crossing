@@ -1,2 +1,4 @@
 # Loading ggplot
 library(ggplot2)
+# Importing the dataset from kaggle
+trainingSet = read.csv('../input/train.csv')
