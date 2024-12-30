@@ -19,8 +19,5 @@ testing = subset(AccesoriesSet, split == FALSE)
 #Fitting the linear regression to our training set
 Multiregressor = lm(formula = Sell ~ ., data = training)
 
-#Preducting the test set results
+#Predicting the test set results
 ypredicts = predict(Multiregressor, newdata = testing)
-
-# visualize output 
-AccesoriesSet$Source
