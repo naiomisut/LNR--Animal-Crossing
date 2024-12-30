@@ -2,7 +2,13 @@
 library(caTools)
 library(ggplot)
 # Importing the dataset from kaggle
-trainingSet = read.csv('accessories.csv')
+AccesoriesSet = read.csv('accessories.csv')
 # Handling Categorical data
-
-
+AccesoriesSet$Source = factor(AccesoriesSet$Source,  
+levels = c('Able Sisters', 'Birthday', 'Gulliver', 'Dodo Airlines', 'Labelle', 'Crafting', 'Nook Miles Shop', 'Recycle Bin'), 
+labels = c('1', '2', '3', '4', '5', '6', '7', '8'))
+# splitting the animal data set into training and test set
+set.seed(12345678)
+split = sample.split(AccesoriesSet$Sell, SplitRatio = 0.5)
+training = subset(AccesoriesSet, split == TRUE)
+testing = subset(AccesoriesSet, split == FALSE)
