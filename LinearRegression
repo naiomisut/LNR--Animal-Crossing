@@ -1,4 +1,8 @@
-# Loading ggplot
-library(ggplot2)
+# Loading caTools & plotting tools
+library(caTools)
+library(ggplot)
 # Importing the dataset from kaggle
-trainingSet = read.csv('../input/train.csv')
+trainingSet = read.csv('accessories.csv')
+# Handling Categorical data
+
+
