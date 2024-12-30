@@ -21,3 +21,19 @@ Multiregressor = lm(formula = Sell ~ ., data = training)
 
 #Predicting the test set results
 ypredicts = predict(Multiregressor, newdata = testing)
+
+#Summary of the model we made
+summary(Multiregressor)
+
+# Display the predicted y values
+print(ypredicts)
+
+# visualize training results 
+ggplot() + geom_point(aes(x = training$labels, 
+						y = training$Sell), colour = 'red') +
+geom_line(aes(x = training$labels,
+				y = predict(Multiregressor, newdata = training)), colour = 'blue') +
+
+ggtitle('Source vs Sells (Training set)') +
+xlab('Source') +
+ylab('Sells')
